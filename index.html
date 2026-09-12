@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funnyfy — The Gautam Adani Algorithm | Transform Any Photo into Gautam Adani</title>
+  <meta name="description" content="Inspired by Spu7Nix's Obama Algorithm. Upload or take a photo to watch it mathematically rearrange and morph into Gautam Adani using particle physics and linear assignment.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="brand-icon">GA</div>
+        <div class="brand-title">
+          <h1>Funnyfy <span class="badge-pill">Algorithm v2.4</span></h1>
+          <p>Turn Any Photo into Gautam Adani • Spu7Nix Particle Physics Engine</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Grid -->
+    <div class="workspace-grid">
+      <!-- Left Column: Input Selection & Settings -->
+      <aside class="sidebar-panel">
+        
+        <!-- Input Selector Card -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title"><span>📥</span> Choose Input Photo</h2>
+          </div>
+
+          <!-- Input Mode Tabs -->
+          <div class="input-tabs">
+            <button id="tabUpload" class="input-tab active">
+              <span>📁</span> Upload Photo
+            </button>
+            <button id="tabCamera" class="input-tab">
+              <span>📷</span> Take Photo
+            </button>
+            <button id="tabPresets" class="input-tab">
+              <span>⚡</span> Presets
+            </button>
+          </div>
+
+          <!-- Tab Content 1: Upload Dropzone -->
+          <div id="uploadView" class="tab-view">
+            <div id="dropzone" class="upload-dropzone">
+              <input type="file" id="fileInput" accept="image/png, image/jpeg, image/webp" class="hidden">
+              <div class="dropzone-icon">⇪</div>
+              <p class="dropzone-text">Click or Drag & Drop Photo Here</p>
+              <p class="dropzone-hint">Supports PNG, JPG, WEBP • Paste with Ctrl+V</p>
+            </div>
+          </div>
+
+          <!-- Tab Content 2: Camera Viewfinder Studio -->
+          <div id="cameraView" class="tab-view hidden">
+            <div class="camera-viewfinder-container">
+              <div class="camera-viewfinder">
+                <video id="cameraVideo" class="camera-video" playsinline autoplay muted></video>
+                <div class="camera-overlay-grid">
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                  <div></div><div></div><div></div>
+                </div>
+                <div class="camera-face-guide"></div>
+                <div id="cameraFlash" class="camera-flash-fx"></div>
+                <div id="countdownBadge" class="countdown-badge">3</div>
+              </div>
+
+              <div class="camera-controls">
+                <button id="flipCamBtn" class="camera-action-btn" title="Switch Camera">
+                  <span>🔄</span> Flip
+                </button>
+                <button id="shutterBtn" class="shutter-btn" title="Take Snapshot with 3s Countdown">
+                  📸
+                </button>
+                <button id="instantSnapBtn" class="camera-action-btn" title="Instant Snapshot">
+                  ⚡ Snap
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content 3: Presets Grid -->
+          <div id="presetsView" class="tab-view hidden">
+            <div class="presets-grid">
+              <div class="preset-chip active" data-src="assets/gautam_adani.jpg" data-name="Gautam Adani">
+                <img src="assets/gautam_adani.jpg" alt="Adani Preset">
+                <div class="preset-chip-label">Adani Self-Loop</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Input Preview Indicator -->
+          <div style="margin-top: 1rem;">
+            <div class="input-preview-card">
+              <img id="activeSourceThumb" src="assets/gautam_adani.jpg" alt="Current Input" class="input-preview-thumb">
+              <div class="input-preview-info">
+                <div id="activeSourceName" class="input-preview-name">Gautam Adani</div>
+                <div class="input-preview-status"><span>✓</span> Ready to Funnyfy</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Gautam Adani Portrait Selection -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title"><span>🎯</span> Target Adani Portrait</h2>
+          </div>
+
+          <div class="adani-target-selector">
+            <div class="target-card active" data-target="assets/gautam_adani.jpg">
+              <img src="assets/gautam_adani.jpg" alt="Classic Adani" class="target-thumb">
+              <div>
+                <div class="target-title">Corporate Suit</div>
+                <div class="target-sub">Executive Portrait</div>
+              </div>
+            </div>
+
+            <div class="target-card" data-target="assets/gautam_adani_2.jpg">
+              <img src="assets/gautam_adani_2.jpg" alt="Summit Adani" class="target-thumb">
+              <div>
+                <div class="target-title">Global Summit</div>
+                <div class="target-sub">Diplomatic Portrait</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Algorithm & Physics Settings -->
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title"><span>⚙️</span> Algorithm Tuning</h2>
+          </div>
+
+          <div class="settings-panel">
+            <div class="setting-item">
+              <label for="animModeSelect" class="setting-label">Physics Dynamics</label>
+              <select id="animModeSelect" class="custom-select">
+                <option value="vortex" selected>Swarm Vortex (Spu7Nix)</option>
+                <option value="tilesort">Pixel Sorter (Obamify)</option>
+                <option value="liquid">Liquid Flow (Fluid Dynamics)</option>
+                <option value="glitch">Cybernetic Glitch</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <label for="gridResSelect" class="setting-label">Grid Resolution</label>
+              <select id="gridResSelect" class="custom-select">
+                <option value="32">32×32 (1,024 Tiles - Ultra Fast)</option>
+                <option value="48" selected>48×48 (2,304 Tiles - Balanced)</option>
+                <option value="64">64×64 (4,096 Tiles - High Res)</option>
+                <option value="80">80×80 (6,400 Tiles - Ultra Crisp)</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <label for="colorModeSelect" class="setting-label">Color Style</label>
+              <select id="colorModeSelect" class="custom-select">
+                <option value="source" selected>Authentic Input Pixels (Pure)</option>
+                <option value="hybrid">Hybrid Chromatic Morph</option>
+              </select>
+            </div>
+
+            <div class="setting-item">
+              <label for="particleShapeSelect" class="setting-label">Tile Shape</label>
+              <select id="particleShapeSelect" class="custom-select">
+                <option value="rounded" selected>Rounded Micro-Tiles</option>
+                <option value="square">Square Pixels</option>
+                <option value="circle">Glowing Orbs</option>
+                <option value="diamond">Gold Diamonds</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- Right Column: Canvas Transformation Stage & Controls -->
+      <main class="main-stage-panel">
+        <div class="canvas-viewport-card">
+          
+          <!-- Interactive Transformation Canvas -->
+          <div class="canvas-stage-wrapper">
+            <canvas id="stageCanvas" width="640" height="640"></canvas>
+            
+            <!-- Floating Stage HUD -->
+            <div class="stage-hud-overlay">
+              <div id="stageStatus" class="stage-status-chip">
+                <span class="pulse-dot"></span>
+                <span id="stageStatusText">Ready to Funnyfy</span>
+              </div>
+              <div class="stage-status-chip">
+                <span id="fpsCounter">60 FPS</span> • <span id="particleCounter">2,304 Particles</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scrubbing & Playback Bar -->
+          <div class="playback-bar">
+            <!-- Scrubber Row -->
+            <div class="scrubber-row">
+              <span class="time-label">Input</span>
+              <input type="range" id="timeScrubber" class="custom-scrubber" min="0" max="1" step="0.001" value="0">
+              <span class="time-label gold">Adani</span>
+            </div>
+
+            <!-- Action Controls Row -->
+            <div class="playback-actions-row">
+              <div class="main-ctrl-group">
+                <button id="playBtn" class="primary-play-btn">
+                  <span id="playIcon">▶</span> <span id="playText">Funnyfy Now</span>
+                </button>
+                <button id="reverseBtn" class="ctrl-btn" title="Reverse Morph">
+                  <span>◀</span> Reverse
+                </button>
+                <button id="resetBtn" class="ctrl-btn" title="Reset to Input">
+                  <span>↺</span> Reset
+                </button>
+              </div>
+
+              <!-- Speed Controls -->
+              <div class="speed-selector">
+                <button class="speed-btn" data-speed="0.5">0.5x</button>
+                <button class="speed-btn active" data-speed="1.0">1.0x</button>
+                <button class="speed-btn" data-speed="2.0">2.0x</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-msg">
+    <span id="toastIcon">✨</span>
+    <span id="toastText">Photo ready for transformation!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/camera.js"></script>
+  <script src="js/algorithm.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
