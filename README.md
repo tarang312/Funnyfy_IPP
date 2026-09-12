@@ -1,7 +1,7 @@
 # Funnyfy_IPP
 
 🎨 Funnyfy
-Transform any photo into Gautam Adani using advanced particle physics and image processing! This is a fun educational project for Image Processing (IPP) coursework, inspired by the popular Obama Algorithm by Spu7Nix.
+Transform any photo into Gautam Adani using advanced particle physics and image processing! This is a fun educational project for Image Processing (IPP) coursework, inspired by Spu7Nix.
 
 🌐 Live Demo: https://funnyfyipp.netlify.app
 
