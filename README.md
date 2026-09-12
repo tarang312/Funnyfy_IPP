@@ -6,8 +6,8 @@ Transform any photo into Gautam Adani using advanced particle physics and image 
 🌐 Live Demo: https://funnyfyipp.netlify.app
 
 ✨ Features
-Photo Upload - Upload images in PNG, JPG, or WEBP format
-Live Camera Capture - Take photos directly from your webcam with countdown and instant capture options
+- Photo Upload - Upload images in PNG, JPG, or WEBP format
+- Live Camera Capture - Take photos directly from your webcam with countdown and instant capture options
 Multiple Transformation Algorithms:
 Swarm Vortex (Spu7Nix Particle Physics)
 Pixel Sorter (Obamify)
